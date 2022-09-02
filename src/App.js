@@ -13,8 +13,8 @@ import PostPage from './pages/PostPage';
 
 function App() {
   return (
-    <main>
-      <Header />
+    <div className='App'>
+      <Header title="My Blog App"/>
       <Nav /> 
       <Routes>
         <Route path='/' element={<Home />} />
@@ -24,7 +24,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
-    </main>
+    </div>
     
   );
 }
