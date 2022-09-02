@@ -1,5 +1,6 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 import Header from './components/Header';
 import Nav from './components/Nav';
@@ -12,10 +13,12 @@ import NewPost from './pages/NewPost';
 import PostPage from './pages/PostPage';
 
 function App() {
+
+  const [search, setSearch] = useState('');
   return (
     <div className='App'>
       <Header title="My Blog App"/>
-      <Nav /> 
+      <Nav search={search} setSearch={setSearch}/> 
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/new-post' element={<NewPost />} />
